@@ -2,8 +2,10 @@ const HOME = '/';
 const CHATBOT = '/chatbot';
 const TODOS = '/todos';
 
-export default {
+const PUBLIC_ROUTES = {
   HOME,
   CHATBOT,
   TODOS,
 };
+
+export default PUBLIC_ROUTES;

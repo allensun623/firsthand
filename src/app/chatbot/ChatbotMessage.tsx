@@ -5,18 +5,10 @@ import { Message } from '@/types/message';
 import { messageTypeEnum } from '@/constants/messages';
 
 export default function ChatbotMessage({ text, type }: Message) {
-  const person = {
-    [messageTypeEnum.CHATBOT]: 'chatbot',
-    [messageTypeEnum.CUSTOMER]: 'you',
-  }[type];
-  const textAlign = {
-    [messageTypeEnum.CHATBOT]: 'left',
-    [messageTypeEnum.CUSTOMER]: 'right',
-  }[type];
   const messageBoxConfig = {
     [messageTypeEnum.CHATBOT]: {
       person: {
-        textAlign: 'left',
+        textAlign: `'left'`,
         name: 'chatbot',
       },
       box: {
@@ -27,7 +19,7 @@ export default function ChatbotMessage({ text, type }: Message) {
     },
     [messageTypeEnum.CUSTOMER]: {
       person: {
-        textAlign: 'right',
+        textAlign: `'right'`,
         name: 'you',
       },
       box: {
@@ -37,16 +29,19 @@ export default function ChatbotMessage({ text, type }: Message) {
       textColor: 'common.white',
     },
   }[type];
+  const textAlign = `'left'`;
   return (
     <Grid container direction='column'>
       <Grid>
-        <Typography
-          color='common.grey'
-          variant='body2'
-          textAlign={messageBoxConfig.person.textAlign}
-        >
-          {messageBoxConfig.person.name}
-        </Typography>
+        {
+          <Typography
+            color='common.grey'
+            variant='body2'
+            sx={{ textAlign: messageBoxConfig.person.textAlign }}
+          >
+            {messageBoxConfig.person.name}
+          </Typography>
+        }
       </Grid>
       <Grid
         sx={(theme) => ({
