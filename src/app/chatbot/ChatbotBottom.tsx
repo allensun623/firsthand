@@ -17,6 +17,12 @@ export default function ChatbotBottom({ onSend }: Props) {
     onSend(message);
     setMessage(''); // Clear the input after sending
   };
+  const handleKeyDown = (e: { key: string }) => {
+    if (e.key === 'Enter') {
+      handleSendClick();
+    }
+  };
+
   return (
     <Grid container direction='row' alignItems='center'>
       <Grid xs>
@@ -27,6 +33,7 @@ export default function ChatbotBottom({ onSend }: Props) {
           autoFocus
           fullWidth
           disableUnderline
+          onKeyDown={handleKeyDown}
         />
       </Grid>
       <Grid>

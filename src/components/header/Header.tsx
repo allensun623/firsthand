@@ -3,9 +3,7 @@ import Logo from './Logo';
 import Navigation from './Navigation';
 import { Box } from '@mui/material';
 
-type Props = {};
-
-export default function Header({}: Props) {
+export default function Header() {
   return (
     <Box
       display='flex'

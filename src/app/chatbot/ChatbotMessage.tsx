@@ -29,7 +29,7 @@ export default function ChatbotMessage({ text, type }: Message) {
       textColor: 'common.white',
     },
   }[type];
-  const textAlign = `'left'`;
+
   return (
     <Grid container direction='column'>
       <Grid>

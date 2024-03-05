@@ -6,9 +6,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { findLastIndex } from 'lodash';
 import navItems from './navItems';
 
-type Props = {};
-
-export default function Navigation({}: Props) {
+export default function Navigation() {
   const router = useRouter();
   const pathname = usePathname();
   const tabValue = useMemo(

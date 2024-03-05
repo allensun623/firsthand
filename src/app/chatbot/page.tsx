@@ -24,7 +24,9 @@ export default function Home() {
         }}
       >
         {chatbotOpen ? (
-          <Chatbot handleCloseChatbot={() => setChatbotOpen(false)} />
+          <Box>
+            <Chatbot handleCloseChatbot={() => setChatbotOpen(false)} />
+          </Box>
         ) : (
           <ChatbotIcon handleOpenChatbot={() => setChatbotOpen(true)} />
         )}
