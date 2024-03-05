@@ -8,7 +8,7 @@ export default function ChatbotMessage({ text, type }: Message) {
   const messageBoxConfig = {
     [messageTypeEnum.CHATBOT]: {
       person: {
-        textAlign: `'left'`,
+        textAlign: 'left',
         name: 'chatbot',
       },
       box: {
@@ -19,7 +19,7 @@ export default function ChatbotMessage({ text, type }: Message) {
     },
     [messageTypeEnum.CUSTOMER]: {
       person: {
-        textAlign: `'right'`,
+        textAlign: 'right',
         name: 'you',
       },
       box: {
